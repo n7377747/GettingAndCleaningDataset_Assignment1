@@ -24,8 +24,8 @@ names(train) <- feature_names
 ##---------------------------------------------------
 ## step 4 extract only mean and standard deviation columns
 ##---------------------------------------------------
-columns_with_mean <- grep("mean",names(feature_names))
-columns_with_std <- grep("std",names(feature_names))
+columns_with_mean <- grep("mean",feature_names)
+columns_with_std <- grep("std",feature_names)
 
 test <- test[,c(columns_with_mean,columns_with_std)]
 train <- train[,c(columns_with_mean,columns_with_std)]
@@ -74,7 +74,7 @@ data$activitylabel <- sub("6",activitylabels[6],data$activitylabel)
 testsubject <- read.table("./test/subject_test.txt")
 trainsubject <- read.table("./train/subject_train.txt")
 
-data$subject<-rbind(trainsubject,testsubject)
+data$subject<-rbind(trainsubject,testsubject)$V1
 
 
 rm(trainsubject,testsubject)
@@ -89,6 +89,7 @@ library(dplyr)
 act <- data %>% 
   group_by(activitylabel,subject) %>% 
   summarise_each(funs(mean))
+
 
 write.table(act, "./tidyset.txt", row.names = FALSE)
 

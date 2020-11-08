@@ -2,7 +2,7 @@
 
 This readme file covers the explanation related to the how the given data was transformed into a tidy set as well as the contents of this repository. This  repository contains the final programming assignment for the course "Getting And Cleaning Data " on coursera
 
-# Contents
+### Contents
 
 This repository consists of 3 files
 <ul>
@@ -21,7 +21,7 @@ This repository consists of 3 files
 <li> <strong>test/subject_test.txt</strong>: This document contains subject labels from which the record of data is extracted
 </ul>
 
-# Running the R script
+### Running the R script
 
 To run the R script one must have the following files in your working directory
 

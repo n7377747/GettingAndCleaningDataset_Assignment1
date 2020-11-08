@@ -88,8 +88,11 @@ library(dplyr)
 
 act <- data %>% 
   group_by(activitylabel,subject) %>% 
-  summarise_each(funs(mean))
+  summarise_all(funs(mean))
 
+##---------------------------------------------------
+## step 10 write the resulting dataset to tidyset.txt
+##---------------------------------------------------
 
 write.table(act, "./tidyset.txt", row.names = FALSE)
 
